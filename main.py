@@ -65,8 +65,10 @@ while True:
 
         if not light_anomaly:
             text_label = "vuot den do"
+            cv2.imwrite("images/{}-{}.jpg".format(text_label, trk_index))
         if not anomaly:
             text_label = "nguoc chieu"
+            cv2.imwrite("images/{}-{}.jpg".format(text_label, trk_index))
 
         color = trackobject.color
         centroids = trackobject.centroids
