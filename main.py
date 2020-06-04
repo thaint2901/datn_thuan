@@ -63,12 +63,13 @@ while True:
                 trackobject.light_anomaly = False
                 light_anomaly = False
 
+        vehicle_img = frame[startY:endY, startX:endX]
         if not light_anomaly:
             text_label = "vuot den do"
-            cv2.imwrite("images/{}-{}.jpg".format(text_label, trk_index))
+            cv2.imwrite("images/{}-{}.jpg".format(text_label, trk_index), vehicle_img)
         if not anomaly:
             text_label = "nguoc chieu"
-            cv2.imwrite("images/{}-{}.jpg".format(text_label, trk_index))
+            cv2.imwrite("images/{}-{}.jpg".format(text_label, trk_index), vehicle_img)
 
         color = trackobject.color
         centroids = trackobject.centroids
